@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         Button checkPassword = findViewById(R.id.buttonCheckPassword);
         TextView passwordTextUpperCase = findViewById(R.id.tvPasswordCheckUpperCase);
         TextView passwordTextLowerCase = findViewById(R.id.tvPasswordCheckLowerCase);
+        TextView passwordTextSpecialCase = findViewById(R.id.tvPasswordCheckSpecialCase);
+        String specialCases = "!@#$%^&*()-_+={}][;:<>,.?/~`";
         confirmButton.setOnClickListener(v -> {
             String email = emailEdit.getText().toString();
             String password = passwordEdit.getText().toString();
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
                 passwordTextUpperCase.setTextColor(Color.rgb(0, 225, 0));
             }
+
             boolean hasLower = false;
             for(int i = 0; i < password.length(); i++){
                 char c = password.charAt(i);
@@ -80,6 +83,20 @@ public class MainActivity extends AppCompatActivity {
             }
             else{
                 passwordTextLowerCase.setTextColor(Color.rgb(0,255,0));
+            }
+
+            boolean hasSpecialCase = false;
+            for (int i = 0; i < password.length(); i++) {
+                char c = password.charAt(i);
+                if (specialCases.indexOf(c) != -1) {
+                    hasSpecialCase = true;
+                    break;
+                }
+            }
+            if (!hasSpecialCase) {
+                passwordTextSpecialCase.setTextColor(Color.rgb(255,0,0));
+            } else {
+                passwordTextSpecialCase.setTextColor(Color.rgb(0,255,0));
             }
         });
     }
