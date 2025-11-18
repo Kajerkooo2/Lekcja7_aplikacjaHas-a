@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rejestruj Konto"
+            android:textSize="32sp"
+            android:background="#008080"
+            android:textColor="@android:color/white"
+            android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/emailView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Podaj email:"
+            android:padding="10dp"
+            />
+
+        <EditText
+            android:id="@+id/emailText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:text="anna@poczta.pl" />
+
+        <TextView
+            android:id="@+id/hasloPodajView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Podaj Hasło: "
+            android:textSize="16sp"
+            android:padding="10dp"/>
+
+        <EditText
+            android:id="@+id/hasloPodajText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:inputType="numberPassword"
+            android:text="123" />
+
+        <TextView
+            android:id="@+id/halsoPowtorzView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Powtorz hasło: "
+            android:padding="10dp"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/halsoPowtorzText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:inputType="numberPassword"
+            android:text="123" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonConfirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ZATWIERDŹ"
+                android:textStyle="bold"
+                android:background="#DDDDDD"
+                android:textColor="#222222"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:padding="12dp" />
+
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Witaj anna@poczta.pl"
+                android:textSize="16sp"
+                android:textColor="#888888"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
