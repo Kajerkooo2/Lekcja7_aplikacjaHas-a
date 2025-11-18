@@ -1,5 +1,5 @@
 package com.example.lekcja7;
-
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
         Button confirmButton = findViewById(R.id.buttonConfirm);
         TextView welcomeText = findViewById(R.id.tvWelcome);
         Button checkPassword = findViewById(R.id.buttonCheckPassword);
-
+        TextView passwordTextUpperCase = findViewById(R.id.tvPasswordCheckUpperCase);
+        TextView passwordTextLowerCase = findViewById(R.id.tvPasswordCheckLowerCase);
         confirmButton.setOnClickListener(v -> {
             String email = emailEdit.getText().toString();
             String password = passwordEdit.getText().toString();
@@ -48,11 +51,35 @@ public class MainActivity extends AppCompatActivity {
             welcomeText.setText(message);
         });
 
-        checkPassword.setOnClickListener(v ->{
+        checkPassword.setOnClickListener(v -> {
             String password = passwordEdit.getText().toString();
+            boolean hasUpper = false;
+            for (int i = 0; i < password.length(); i++) {
+                char c = password.charAt(i);
+                if (Character.isUpperCase(c)) {
+                    hasUpper = true;
+                    break;
+                }
+            }
+            if (!hasUpper) {
+                passwordTextUpperCase.setTextColor(Color.rgb(255, 0, 0));
+            } else {
 
-            if(!password.contains("QWERTYUIOPASDFGHJKLZXCVBNM")){
-
+                passwordTextUpperCase.setTextColor(Color.rgb(0, 225, 0));
+            }
+            boolean hasLower = false;
+            for(int i = 0; i < password.length(); i++){
+                char c = password.charAt(i);
+                if(Character.isLowerCase(c)){
+                    hasLower = true;
+                    break;
+                }
+            }
+            if(!hasLower){
+                passwordTextLowerCase.setTextColor(Color.rgb(255,0,0));
+            }
+            else{
+                passwordTextLowerCase.setTextColor(Color.rgb(0,255,0));
             }
         });
     }
