@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         TextView passwordTextUpperCase = findViewById(R.id.tvPasswordCheckUpperCase);
         TextView passwordTextLowerCase = findViewById(R.id.tvPasswordCheckLowerCase);
         TextView passwordTextSpecialCase = findViewById(R.id.tvPasswordCheckSpecialCase);
+        TextView passwordTextLength = findViewById(R.id.tvPasswordCheckLength);
         String specialCases = "!@#$%^&*()-_+={}][;:<>,.?/~`";
         confirmButton.setOnClickListener(v -> {
             String email = emailEdit.getText().toString();
@@ -97,6 +98,13 @@ public class MainActivity extends AppCompatActivity {
                 passwordTextSpecialCase.setTextColor(Color.rgb(255,0,0));
             } else {
                 passwordTextSpecialCase.setTextColor(Color.rgb(0,255,0));
+            }
+
+            if(password.length() >= 12){
+                passwordTextLength.setTextColor(Color.rgb(0,255,0));
+            }
+            else{
+                passwordTextLength.setTextColor(Color.rgb(255,0,0));
             }
         });
     }
