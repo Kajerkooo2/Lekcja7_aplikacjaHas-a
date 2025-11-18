@@ -82,9 +82,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ZATWIERDŹ"
-                android:textStyle="bold"
-                android:background="#DDDDDD"
-                android:textColor="#222222"
+                android:textColor="@color/black"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:padding="12dp" />
@@ -98,6 +96,16 @@
                 android:textColor="#888888"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="12dp" />
+
+            <Button
+                android:id="@+id/buttonCheckPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sprawdz Hasło"
+                android:textColor="@color/black"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:padding="12dp"  />
         </LinearLayout>
 
 
